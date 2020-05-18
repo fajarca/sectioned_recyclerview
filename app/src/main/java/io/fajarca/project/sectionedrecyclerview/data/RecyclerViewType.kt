@@ -1,4 +1,4 @@
-package io.fajarca.project.sectionedrecyclerview
+package io.fajarca.project.sectionedrecyclerview.data
 
 enum class RecyclerViewType {
     LINEAR_VERTICAL,

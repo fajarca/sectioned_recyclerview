@@ -1,4 +1,4 @@
-package io.fajarca.project.sectionedrecyclerview
+package io.fajarca.project.sectionedrecyclerview.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,15 +8,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import io.fajarca.project.sectionedrecyclerview.R
+import io.fajarca.project.sectionedrecyclerview.data.RecyclerViewSection
+import io.fajarca.project.sectionedrecyclerview.data.RecyclerViewType
 
 class ContainerAdapter(private val context: Context, private val sections : List<RecyclerViewSection>, private val recyclerViewType: RecyclerViewType) : RecyclerView.Adapter<ContainerAdapter.ViewHolder>() {
 
     class ViewHolder(private val view : View) : RecyclerView.ViewHolder(view) {
 
         companion object {
-            fun create(parent: ViewGroup) : ViewHolder{
+            fun create(parent: ViewGroup) : ViewHolder {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.item_content_container, parent, false)
-                return ViewHolder(view)
+                return ViewHolder(
+                    view
+                )
             }
         }
 
@@ -43,14 +48,19 @@ class ContainerAdapter(private val context: Context, private val sections : List
                 }
             }
 
-            val adapter = ItemAdapter(section.items)
+            val adapter =
+                ItemAdapter(
+                    section.items
+                )
             recyclerView.adapter = adapter
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder.create(parent)
+        return ViewHolder.create(
+            parent
+        )
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val section = sections[position]

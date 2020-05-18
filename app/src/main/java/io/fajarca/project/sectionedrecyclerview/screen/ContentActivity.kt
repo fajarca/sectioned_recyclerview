@@ -1,10 +1,14 @@
-package io.fajarca.project.sectionedrecyclerview
+package io.fajarca.project.sectionedrecyclerview.screen
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import io.fajarca.project.sectionedrecyclerview.R
+import io.fajarca.project.sectionedrecyclerview.data.RecyclerViewType
+import io.fajarca.project.sectionedrecyclerview.adapter.ContainerAdapter
+import io.fajarca.project.sectionedrecyclerview.data.DataStore
 import kotlinx.android.synthetic.main.activity_content.*
 
 
@@ -61,7 +65,12 @@ class ContentActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         val linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
-        val adapter = ContainerAdapter(this, DataStore.populateData(), recyclerViewType)
+        val adapter =
+            ContainerAdapter(
+                this,
+                DataStore.populateData(),
+                recyclerViewType
+            )
         recyclerView.adapter = adapter
     }
 

@@ -1,4 +1,4 @@
-package io.fajarca.project.sectionedrecyclerview
+package io.fajarca.project.sectionedrecyclerview.data
 
 object DataStore {
     fun populateData(): List<RecyclerViewSection> {
