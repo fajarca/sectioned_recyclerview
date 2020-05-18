@@ -1,0 +1,2 @@
+rootProject.name='SectionedRecyclerView'
+include ':app'
